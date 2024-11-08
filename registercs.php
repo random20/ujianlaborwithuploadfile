@@ -3,10 +3,10 @@ include 'config.php';
 
 $username = $_POST['username'];
 $password = $_POST['password'];
-$level = 'calonsiswa';
+$role = "calonsiswa";
 
 
-$mysqli = "INSERT INTO user (username, password, level) VALUES ('$username', '$password', '$level')";
+$mysqli = "INSERT INTO user (username, password, role) VALUES ('$username', '$password', '$role')";
 
 $result = mysqli_query($db, $mysqli);
 

@@ -11,14 +11,14 @@ if ($_SESSION['role'] != 'calonsiswa') {
 include '../config.php';
 
 // Validasi input yang diterima
-$nama = $_POST['nama'] ?? '';
-$nisn = $_POST['nisn'] ?? '';
-$jurusan = $_POST['jurusan'] ?? '';
-$email = $_POST['email'] ?? '';
-$nohp = $_POST['nohp'] ?? '';
-$alamat = $_POST['alamat'] ?? '';
-$ratanilai = $_POST['ratanilai'] ?? '';
-$username = $_SESSION['username'] ?? ''; // Ambil username dari session login
+$nama = $_POST['nama'] ? $_POST['nama'] : '';
+$nisn = $_POST['nisn'] ? $_POST['nisn'] : '';
+$jurusan = $_POST['jurusan'] ? $_POST['jurusan'] : '';
+$email = $_POST['email'] ? $_POST['email'] : '';
+$nohp = $_POST['nohp'] ? $_POST['nohp'] : '';
+$alamat = $_POST['alamat'] ? $_POST['alamat'] : '';
+$ratanilai = $_POST['ratanilai'] ? $_POST['ratanilai'] : '';
+$username = $_SESSION['username'] ? $_SESSION['username'] : ''; // Ambil username dari session login
 
 // Validasi dan upload file KTP
 $uploadOk = true;
@@ -32,7 +32,7 @@ if (!in_array($imageFileType, $allowedTypes)) {
 }
 
 if ($uploadOk) {
-    $ktp_path = "uploads/" . uniqid() . "." . $imageFileType;
+    $ktp_path = "../uploads/" . uniqid() . "." . $imageFileType;
     if (move_uploaded_file($_FILES["ktp"]["tmp_name"], $ktp_path)) {
         // Siapkan query aman menggunakan prepared statements
         $stmt = $db->prepare("INSERT INTO pendaftaran (username, nama, nisn, jurusan, email, nohp, alamat, ratanilai, ktp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
