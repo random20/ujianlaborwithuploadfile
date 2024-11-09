@@ -13,6 +13,13 @@ if (isset($_GET['id'])) {
 
     if ($result->num_rows > 0) {
         $data = $result->fetch_assoc();
+
+        // Tambahkan tombol cetak di bagian atas
+        echo "<div style='text-align: right; margin-bottom: 20px;'>";
+        echo "<a href='cetak_per_pendaftar.php?id=" . htmlspecialchars($id) . "' target='_blank'>";
+        echo "<button style='padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; cursor: pointer;'>Cetak Laporan</button>";
+        echo "</a>";
+        echo "</div>";
         
         // Tampilkan detail calon siswa
         echo "<h2>Detail Calon Siswa</h2>";
@@ -28,8 +35,9 @@ if (isset($_GET['id'])) {
         // Tampilkan KTP jika tersedia
         if (!empty($data['ktp'])) {
             echo "<p><strong>KTP:</strong></p>";
-            echo "<img src='../" . htmlspecialchars($data['ktp']) . "' alt='KTP' style='width:100%; max-width:300px;'>";
+            echo "<img src='../" . htmlspecialchars($data['ktp']) . "' alt='KTP' style='width:100%; max-width:300px; display: block; margin-bottom: 20px;'>";
         }
+
     } else {
         echo "<p>Data tidak ditemukan.</p>";
     }
