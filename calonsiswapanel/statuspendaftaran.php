@@ -150,7 +150,7 @@ $stmt->close();
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <h2>File KTP</h2>
-            <img src="<?php echo htmlspecialchars($data['ktp']); ?>" alt="KTP" style="width: 100%; border-radius: 8px;">
+            <img src="../uploads/<?php echo htmlspecialchars($data['ktp']); ?>" alt="KTP" style="width: 100%; border-radius: 8px;">
         </div>
     </div>
 
