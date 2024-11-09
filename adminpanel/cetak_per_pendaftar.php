@@ -78,7 +78,7 @@ if (isset($_GET['id'])) {
                     <!-- Foto KTP -->
                     <p><strong>Foto KTP:</strong></p>
                     <?php if (!empty($query['ktp'])) { ?>
-                        <img src="../<?php echo htmlspecialchars($query['ktp']);?>" alt="">
+                        <img src="../uploads/<?php echo htmlspecialchars($query['ktp']);?>" alt="">
                     <?php } else { ?>
                         <p>Tidak ada foto KTP</p>
                     <?php } ?>

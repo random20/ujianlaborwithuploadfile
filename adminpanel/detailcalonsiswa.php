@@ -35,7 +35,7 @@ if (isset($_GET['id'])) {
         // Tampilkan KTP jika tersedia
         if (!empty($data['ktp'])) {
             echo "<p><strong>KTP:</strong></p>";
-            echo "<img src='../" . htmlspecialchars($data['ktp']) . "' alt='KTP' style='width:100%; max-width:300px; display: block; margin-bottom: 20px;'>";
+            echo "<img src='../uploads/" . htmlspecialchars($data['ktp']) . "' alt='KTP' style='width:100%; max-width:300px; display: block; margin-bottom: 20px;'>";
         }
 
     } else {

@@ -104,11 +104,9 @@ include '../config.php';
                 echo "<td>" . htmlspecialchars($query['ratanilai']) . "</td>";
                 
                 // Menampilkan foto KTP jika ada
-                $ktpPath = $query['ktp'] ?? '';
-                if (file_exists($ktpPath) && !empty($ktpPath)) {
-                    echo "<td><img src='" . htmlspecialchars($ktpPath) . "' alt='Foto KTP'></td>";
-                } else {
-                    echo "<td><p>Tidak ada foto</p></td>";
+                //$ktpPath = $query['ktp'] ? $query['ktp'] : '';
+                if (!empty($query['ktp'])) {
+                    echo "<td><img src='../uploads/" . htmlspecialchars($query['ktp']) . "' alt='KTP' '></td>";
                 }
 
                 echo "<td>" . htmlspecialchars($query['statuscs']) . "</td>";
