@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2024 at 04:28 AM
+-- Generation Time: Nov 09, 2024 at 06:09 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -48,7 +48,8 @@ CREATE TABLE `pendaftaran` (
 INSERT INTO `pendaftaran` (`id`, `username`, `nama`, `nisn`, `jurusan`, `email`, `nohp`, `alamat`, `ratanilai`, `ktp`, `statuscs`) VALUES
 (5, '', 'nopi', '8765325421', 'RPL', 'nopi@gmail.com', '082134652123', 'Rajawali', 87.6, '', ''),
 (7, 'ezi', 'ezi', '34523134', 'Sistem Informasi', 'ezi@ezimail.com', '123123125123', 'asdasgasd', 89.8, 'uploads/672cf0193b066.jpeg', 'diterima'),
-(9, '2055201009', 'banu', '2055201009', 'teknik informatika', 'neufa404@gmail.com', '082170092103', 'jl. barito sari', 90, '../uploads/672e57446bb6f.jpg', '-');
+(9, '2055201009', 'banu', '2055201009', 'teknik informatika', 'neufa404@gmail.com', '082170092103', 'jl. barito sari', 90, 'uploads/672e57446bb6f.jpg', '-'),
+(11, 'toni', 'toni decade', '898922', 'teknik informatika', 'toni@dedede.cade', '0987222233', 'beringin', 87.8, '672eedaa8a046.jpg', '-');
 
 -- --------------------------------------------------------
 
@@ -71,7 +72,8 @@ INSERT INTO `user` (`id`, `username`, `password`, `role`) VALUES
 (1, 'admin', 'admin', 'admin'),
 (3, 'usernomor2', '12345', 'calonsiswa'),
 (4, '8765325421', '123', 'calonsiswa'),
-(5, '2055201009', '123', 'calonsiswa');
+(5, '2055201009', '123', 'calonsiswa'),
+(6, 'toni', 'toni123', 'calonsiswa');
 
 --
 -- Indexes for dumped tables
@@ -98,13 +100,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
