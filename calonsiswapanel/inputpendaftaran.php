@@ -32,11 +32,12 @@ if (!in_array($imageFileType, $allowedTypes)) {
 }
 
 if ($uploadOk) {
-    $ktp_path = "uploads/" . uniqid() . "." . $imageFileType;
-    if (move_uploaded_file($_FILES["ktp"]["tmp_name"], $ktp_path)) {
+    $ktp_name = uniqid() . "." . $imageFileType;
+    $ktp_path = "../uploads/";
+    if (move_uploaded_file($_FILES["ktp"]["tmp_name"], $ktp_path.$ktp_name)) {
         // Siapkan query aman menggunakan prepared statements
         $stmt = $db->prepare("INSERT INTO pendaftaran (username, nama, nisn, jurusan, email, nohp, alamat, ratanilai, ktp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssssssss", $username, $nama, $nisn, $jurusan, $email, $nohp, $alamat, $ratanilai, $ktp_path);
+        $stmt->bind_param("sssssssss", $username, $nama, $nisn, $jurusan, $email, $nohp, $alamat, $ratanilai, $ktp_name);
 
         if ($stmt->execute()) {
             echo "Pendaftaran berhasil!";
