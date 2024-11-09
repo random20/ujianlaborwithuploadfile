@@ -8,6 +8,20 @@ if ($_SESSION['role'] != "admin") {
 }
 
 include '../config.php';
+
+
+// Menghitung jumlah data dengan status "diterima"
+$count_query = mysqli_query($db, "SELECT COUNT(*) as total_diterima FROM pendaftaran WHERE statuscs = 'diterima'");
+$count_result = mysqli_fetch_assoc($count_query);
+$total_diterima = $count_result['total_diterima'];
+
+// Menghitung total jumlah pendaftar
+$count_total_query = mysqli_query($db, "SELECT COUNT(*) as total_pendaftar FROM pendaftaran");
+$count_total_result = mysqli_fetch_assoc($count_total_query);
+$total_pendaftar = $count_total_result['total_pendaftar'];
+
+$selisih = $total_pendaftar - $total_diterima;
+
 ?>
 
 <!DOCTYPE html>
@@ -114,6 +128,17 @@ include '../config.php';
             }
             ?>
         </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="10" style="text-align: right;">Jumlah Pendaftar: <?php echo $total_pendaftar; ?></td>
+            </tr>
+            <tr>
+                <td colspan="10" style="text-align: right;">Jumlah Pendaftar yang diterima: <?php echo $total_diterima; ?></td>
+            </tr>
+            <tr>    
+                <td colspan="10" style="text-align: right;">Jumlah selisih: <?php echo $selisih; ?></td>
+            </tr>
+        </tfoot>
     </table>
 </div>
 
