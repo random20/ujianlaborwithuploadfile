@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2024 at 06:09 AM
+-- Generation Time: Nov 09, 2024 at 09:36 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -46,10 +46,9 @@ CREATE TABLE `pendaftaran` (
 --
 
 INSERT INTO `pendaftaran` (`id`, `username`, `nama`, `nisn`, `jurusan`, `email`, `nohp`, `alamat`, `ratanilai`, `ktp`, `statuscs`) VALUES
-(5, '', 'nopi', '8765325421', 'RPL', 'nopi@gmail.com', '082134652123', 'Rajawali', 87.6, '', ''),
-(7, 'ezi', 'ezi', '34523134', 'Sistem Informasi', 'ezi@ezimail.com', '123123125123', 'asdasgasd', 89.8, 'uploads/672cf0193b066.jpeg', 'diterima'),
-(9, '2055201009', 'banu', '2055201009', 'teknik informatika', 'neufa404@gmail.com', '082170092103', 'jl. barito sari', 90, 'uploads/672e57446bb6f.jpg', '-'),
-(11, 'toni', 'toni decade', '898922', 'teknik informatika', 'toni@dedede.cade', '0987222233', 'beringin', 87.8, '672eedaa8a046.jpg', '-');
+(7, 'ezi', 'ezi', '34523134', 'Sistem Informasi', 'ezi@ezimail.com', '123123125123', 'asdasgasd', 89.8, '672cf0193b066.jpeg', 'diterima'),
+(9, '2055201009', 'banu', '2055201009', 'teknik informatika', 'neufa404@gmail.com', '082170092103', 'jl. barito sari', 90, '672e57446bb6f.jpg', 'diterima'),
+(11, 'toni', 'toni decade', '898922', 'teknik informatika', 'toni@dedede.cade', '0987222233', 'beringin', 87.8, '672eedaa8a046.jpg', 'cadangan');
 
 -- --------------------------------------------------------
 
