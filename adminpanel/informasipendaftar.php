@@ -97,6 +97,7 @@ include '../config.php';
     <div class="datadaftar">
         <p class="tulisan_menu" style="color:aqua;">Status Pendaftaran</p>
         <br><br>
+        <button onclick="window.location.href='cetak_laporan.php'" class="tomboltabel">Cetak Laporan</button>
 
         <table border="1" align="center">
             <thead>

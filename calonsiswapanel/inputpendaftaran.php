@@ -32,7 +32,7 @@ if (!in_array($imageFileType, $allowedTypes)) {
 }
 
 if ($uploadOk) {
-    $ktp_path = "../uploads/" . uniqid() . "." . $imageFileType;
+    $ktp_path = "uploads/" . uniqid() . "." . $imageFileType;
     if (move_uploaded_file($_FILES["ktp"]["tmp_name"], $ktp_path)) {
         // Siapkan query aman menggunakan prepared statements
         $stmt = $db->prepare("INSERT INTO pendaftaran (username, nama, nisn, jurusan, email, nohp, alamat, ratanilai, ktp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
