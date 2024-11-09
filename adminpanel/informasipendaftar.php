@@ -143,6 +143,7 @@ include '../config.php';
                         </td>
                         <td>
                             <button onclick="openModal('<?php echo $query['id']; ?>')">DETAIL</button>
+                            <a href="delete_pendaftar.php?id=<?php echo $query['id']; ?>"><button>DELETE</button></a>
                         </td>
                     </tr>
                 <?php
